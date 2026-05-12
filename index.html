@@ -72,7 +72,9 @@
       padding: 100px 20px 60px;
       background:
         linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.52)),
-        url('tailandia-hero.jpg') center/cover no-repeat; /* Imagem de fundo atualizada */
+        url('tailandia-hero.jpg') center/cover no-repeat; /* Imagem de fundo da Tailândia */
+      background-size: cover; /* Garante que a imagem cubra toda a área */
+      background-position: center; /* Centraliza a imagem */
       color: #fff;
     }
 
@@ -161,7 +163,7 @@
       border-radius: 2px;
     }
 
-    /* ── ESSENCIAIS (AGORA INFORMAÇÕES GERAIS) ── */
+    /* ── INFORMAÇÕES GERAIS ── */
     .essentials { background: #fff; }
 
     .info-grid {
@@ -178,7 +180,7 @@
       padding: 34px 26px;
       text-align: center;
       box-shadow: 0 4px 24px rgba(0,0,0,.07);
-      border-top: 4px solid var(--thai-red); /* Cor ajustada */
+      border-top: 4px solid var(--thai-red);
       transition: transform .3s, box-shadow .3s;
     }
 
@@ -191,9 +193,9 @@
     .info-card h3 { color: var(--dark); margin-bottom: 10px; font-size: 1.05rem; font-weight: 600; }
     .info-card p  { font-size: .86rem; color: #555; line-height: 1.7; }
 
-    /* ── ITINERÁRIO (AGORA ROTEIRO DETALHADO) ── */
+    /* ── ROTEIRO DETALHADO ── */
     .itinerary-bg {
-      background: linear-gradient(135deg, var(--thai-blue) 0%, var(--dark) 100%); /* Fundo tailandês */
+      background: linear-gradient(135deg, var(--thai-blue) 0%, var(--dark) 100%);
       color: #fff;
     }
 
@@ -236,7 +238,7 @@
       align-items: center;
       justify-content: center;
       z-index: 1;
-      box-shadow: 0 0 0 5px var(--thai-blue), 0 0 0 7px var(--gold); /* Cor ajustada */
+      box-shadow: 0 0 0 5px var(--thai-blue), 0 0 0 7px var(--gold);
     }
 
     .day-content {
@@ -275,7 +277,7 @@
     .tag.blue   { background: #1565C0; color: #fff; }
     .tag.purple { background: var(--accent); color: #fff; }
     .tag.gold   { background: var(--gold); color: var(--dark); }
-    .tag.thai   { background: var(--thai-red); color: #fff; } /* Novo tag */
+    .tag.thai   { background: var(--thai-red); color: #fff; }
 
     /* ── SERVIÇOS ── */
     .services-section { background: #F0F4F8; }
@@ -295,7 +297,7 @@
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
     }
 
-    .service-box.included { border-top: 5px solid var(--thai-red); } /* Cor ajustada */
+    .service-box.included { border-top: 5px solid var(--thai-red); }
     .service-box.excluded { border-top: 5px solid var(--red); }
 
     .service-box h3 {
@@ -371,7 +373,7 @@
     .dir-badge.ida   { background: #C8E6C9; color: #1B5E20; }
     .dir-badge.volta { background: #FFCCBC; color: #BF360C; }
 
-    /* ── HOTÉIS (AGORA HOTÉIS E CRUZEIRO) ── */
+    /* ── HOSPEDAGEM ── */
     .hotels-section { background: #fff; }
 
     .hotels-grid {
@@ -388,7 +390,7 @@
       padding: 36px 28px;
       text-align: center;
       box-shadow: 0 4px 24px rgba(0,0,0,.09);
-      border-top: 4px solid var(--thai-red); /* Cor ajustada */
+      border-top: 4px solid var(--thai-red);
       transition: transform .3s, box-shadow .3s;
     }
 
@@ -447,7 +449,7 @@
 
     /* ── CTA ── */
     .cta-section {
-      background: linear-gradient(135deg, var(--thai-blue) 0%, var(--thai-red) 100%); /* Fundo tailandês */
+      background: linear-gradient(135deg, var(--thai-blue) 0%, var(--thai-red) 100%);
       color: #fff;
       text-align: center;
       padding: 100px 20px;
@@ -539,7 +541,7 @@
 
 <!-- ══════════ NAV ══════════ -->
 <nav>
-  <img src="logo-oficina.png" alt="Oficina de Turismo"/>
+  <img src="Logo fundo transparente.png" alt="Oficina de Turismo"/>
   <ul>
     <li><a href="#sobre">Sobre a Viagem</a></li>
     <li><a href="#roteiro">Roteiro</a></li>
@@ -552,7 +554,7 @@
 
 <!-- ══════════ HERO ══════════ -->
 <section class="hero">
-  <img class="hero-logo" src="logo-oficina.png" alt="Oficina de Turismo"/>
+  <img class="hero-logo" src="Logo fundo transparente.png" alt="Oficina de Turismo"/>
   <h1>Tailândia Mágica</h1>
   <p class="subtitle">✈ 23 de Fevereiro de 2027 &nbsp;|&nbsp; 13 Dias · 12 Noites</p>
   <div class="badges">
@@ -618,7 +620,7 @@
     <div class="day">
       <div class="day-number">1</div>
       <div class="day-content">
-        <h3>11 Jan — Chegada a Bangkok</h3>
+        <h3>23 Fev — Chegada a Bangkok</h3>
         <p>Chegada ao aeroporto de Bangkok, onde seu guia de língua inglesa o espera, e transferência para o hotel. Tempo livre até o check-in no hotel, conforme disponibilidade (os quartos geralmente ficam disponíveis a partir das 15h). Acomodação em hotel.</p>
         <p><strong>OPCIONAL: Serviço Fast Track na Chegada Aeroportos de Suvarnabhumi (BKK)</strong> Encontre o assistente no transporte aéreo, ele vai te acompanhar até o balcão de imigração. Ele vai te levar pela aba e te acompanhar até você conhecer o guia. (Não inclui visto, 2000 THB., por favor, prepare o valor em dinheiro. Valor por pessoa USD 160.00 +IOF USD 4.97)</p>
         <div class="tags">
@@ -631,7 +633,7 @@
     <div class="day">
       <div class="day-number">2</div>
       <div class="day-content">
-        <h3>12 Jan — Bangkok - Cidade e Templos, incluindo o Grande Palácio</h3>
+        <h3>24 Fev — Bangkok - Cidade e Templos, incluindo o Grande Palácio</h3>
         <p>Visite três dos templos budistas mais populares, começando pelo <strong>Wat Traimit</strong> (Buda de ouro maciço). O tour continuará então para <strong>Wat Pho</strong> (Buda reclinado e os Chedis dos Reis). Em seguida, você visitará o <strong>Palácio Real</strong>, residência do Rei da Tailândia por 150 anos, e o <strong>Wat Phra Kaew</strong> (Templo do Buda Esmeralda). Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🏯 Templos</span>
@@ -644,7 +646,7 @@
     <div class="day">
       <div class="day-number">3</div>
       <div class="day-content">
-        <h3>13 Jan — Bangkok - Mercado Ferroviário Mae Klong & Mercado Flutuante Damnoen Saduak - Tour pela cidade por Tuk Tuk</h3>
+        <h3>25 Fev — Bangkok - Mercado Ferroviário Mae Klong & Mercado Flutuante Damnoen Saduak - Tour pela cidade por Tuk Tuk</h3>
         <p>Após o café da manhã, traslado para visitar o famoso <strong>mercado de trens Mae Klong</strong>. Em seguida, iremos ao <strong>mercado flutuante Damnoen Saduak</strong> de barco. Depois, visite o <strong>Wat Bang Kung</strong>, um templo escondido entre as raízes de uma árvore. À tarde, passeio pela cidade de tuk tuk, explorando: Chinatown, telhado com vista para a cidade velha, estrada Khao San e parada gastronômica para provar o famoso Pad Thai. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🛍 Mercados</span>
@@ -658,7 +660,7 @@
     <div class="day">
       <div class="day-number">4</div>
       <div class="day-content">
-        <h3>14 Jan — Bangkok – Chiang Mai</h3>
+        <h3>26 Fev — Bangkok – Chiang Mai</h3>
         <p>Café da manhã no hotel. Após o check-out, traslado para o aeroporto de Bangkok para seu voo para Chiang Mai (não incluído no preço do programa). Chegada em Chiang Mai, traslado para o hotel. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag blue">✈ Voo Doméstico</span>
@@ -671,7 +673,7 @@
     <div class="day">
       <div class="day-number">5</div>
       <div class="day-content">
-        <h3>15 Jan — Chiang Mai - Tour de Dia Inteiro em Chiang Rai</h3>
+        <h3>27 Fev — Chiang Mai - Tour de Dia Inteiro em Chiang Rai</h3>
         <p>Café da manhã no hotel. Excursão de dia inteiro em Chiang Rai, famosa por seus templos únicos: <strong>Fontes Termais Mae Kachan</strong>, <strong>Templo Branco (Wat Rong Khun)</strong>, <strong>Templo Azul (Wat Rong Suea Ten)</strong>, <strong>Templo Vermelho (Wat Huay Pla Kang)</strong> e <strong>Comunidade Karen</strong> (tribo de mulheres de pescoço comprido). Retorno ao hotel em Chiang Mai. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🏯 Templos</span>
@@ -684,7 +686,7 @@
     <div class="day">
       <div class="day-number">6</div>
       <div class="day-content">
-        <h3>16 Jan — Chiang Mai - Santuário de Elefantes</h3>
+        <h3>28 Fev — Chiang Mai - Santuário de Elefantes</h3>
         <p>Café da manhã no hotel. Visita a um <strong>santuário de elefantes</strong>, onde os animais vivem em um ambiente protegido. Durante a visita: alimentação, caminhada e banho com os elefantes. Almoço tradicional tailandês em um restaurante local. Retorno ao hotel. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🐘 Elefantes</span>
@@ -697,7 +699,7 @@
     <div class="day">
       <div class="day-number">7</div>
       <div class="day-content">
-        <h3>17 Jan — Chiang Mai – Phuket – Phi Phi</h3>
+        <h3>01 Mar — Chiang Mai – Phuket – Phi Phi</h3>
         <p>Café da manhã no hotel. Após o check-out, traslado para o aeroporto de Chiang Mai para seu voo para Phuket (não incluído no preço do programa). Chegada ao Aeroporto de Phuket, traslado para o píer para pegar a lancha compartilhada até a <strong>Ilha Phi Phi</strong>. Chegada ao píer na Ilha Phi Phi, a equipe do resort o acompanhará até o resort. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag blue">✈ Voo Doméstico</span>
@@ -710,7 +712,7 @@
     <div class="day">
       <div class="day-number">8</div>
       <div class="day-content">
-        <h3>18 Jan — Phi Phi - Excursão de Dia Inteiro para a Ilha Phi Phi de Lancha</h3>
+        <h3>02 Mar — Phi Phi - Excursão de Dia Inteiro para a Ilha Phi Phi de Lancha</h3>
         <p>Café da manhã no hotel. Explore a <strong>Ilha Phi Phi</strong> e algumas das paisagens mais famosas de lancha particular. Visitas: <strong>Baía Maya</strong>, lagoas escondidas e paradas para snorkel. Retorne ao resort no final da tarde. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🏝 Praias</span>
@@ -724,7 +726,7 @@
     <div class="day">
       <div class="day-number">9</div>
       <div class="day-content">
-        <h3>19 Jan — Phi Phi - Tour matinal de meio dia em barco tradicional de cauda longa</h3>
+        <h3>03 Mar — Phi Phi - Tour matinal de meio dia em barco tradicional de cauda longa</h3>
         <p>Café da manhã no hotel. Explore as praias e lagoas da região e a <strong>Ilha Phi Phi</strong> em um tradicional barco tailandês longtail. Volte para o resort. Tarde livre. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🛶 Passeio de Barco</span>
@@ -736,7 +738,7 @@
     <div class="day">
       <div class="day-number">10</div>
       <div class="day-content">
-        <h3>20 Jan — Phi Phi</h3>
+        <h3>04 Mar — Phi Phi</h3>
         <p>Café da manhã no hotel. Dia livre para aproveitar à vontade as belezas de Phi Phi.</p>
         <div class="tags">
           <span class="tag thai">☀️ Dia Livre</span>
@@ -748,7 +750,7 @@
     <div class="day">
       <div class="day-number">11</div>
       <div class="day-content">
-        <h3>21 Jan — Phi Phi - Phuket</h3>
+        <h3>05 Mar — Phi Phi - Phuket</h3>
         <p>Café da manhã no hotel. Após o check-out, pegaremos a lancha compartilhada do Phi Phi Pier até o Phuket Pier, onde seu guia que fala inglês estará esperando por você. Transferência para o hotel em Phuket. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag blue">🚤 Traslado Marítimo</span>
@@ -761,7 +763,7 @@
     <div class="day">
       <div class="day-number">12</div>
       <div class="day-content">
-        <h3>22 Jan — Phuket - Passeio de Dia Inteiro pela Ilha James Bond de Lancha</h3>
+        <h3>06 Mar — Phuket - Passeio de Dia Inteiro pela Ilha James Bond de Lancha</h3>
         <p>Café da manhã no hotel. Explore a <strong>Ilha James Bond</strong> e a famosa <strong>Baía de Phang Nga</strong>. Visitas: <strong>Ilha Panak</strong>, <strong>Ilha Hong</strong>, <strong>Vila Flutuante Koh Panyee</strong>, <strong>Ilha James Bond</strong> e <strong>Ilha Naka</strong>. Retorne ao hotel no fim da tarde. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🏝 Ilhas</span>
@@ -775,7 +777,7 @@
     <div class="day">
       <div class="day-number">13</div>
       <div class="day-content">
-        <h3>23 Jan — Phuket - Partida</h3>
+        <h3>07 Mar — Phuket - Partida</h3>
         <p>Café da manhã no hotel. Após o check-out, traslado para o aeroporto de Phuket para o voo de volta para casa. <strong>Fim dos nossos serviços.</strong></p>
         <div class="tags">
           <span class="tag blue">✈ Retorno</span>
@@ -863,7 +865,7 @@
         <tr>
           <td><span class="dir-badge ida">IDA</span></td>
           <td>✈ Bangkok → Chiang Mai</td>
-          <td>14 Jan 2027</td>
+          <td>26 Fev 2027</td>
           <td><strong>Não Incluso</strong></td>
           <td>XX:XX</td>
           <td>XX:XX</td>
@@ -871,7 +873,7 @@
         <tr>
           <td><span class="dir-badge ida">IDA</span></td>
           <td>✈ Chiang Mai → Phuket</td>
-          <td>17 Jan 2027</td>
+          <td>01 Mar 2027</td>
           <td><strong>Não Incluso</strong></td>
           <td>XX:XX</td>
           <td>XX:XX</td>
@@ -879,7 +881,7 @@
         <tr>
           <td><span class="dir-badge volta">VOLTA</span></td>
           <td>✈ Phuket → São Paulo</td>
-          <td>23 Fev 2027</td>
+          <td>07 Mar 2027</td>
           <td><strong>A definir</strong></td>
           <td>XX:XX</td>
           <td>XX:XX</td>
@@ -963,7 +965,7 @@
 
 <!-- ══════════ FOOTER ══════════ -->
 <footer>
-  <img src="logo-oficina.png" alt="Oficina de Turismo"/>
+  <img src="Logo fundo transparente.png" alt="Oficina de Turismo"/>
   <p>
     📱 <a href="tel:+5535988622943">(35) 98862-2943</a>
     &nbsp;·&nbsp;
