@@ -4,18 +4,22 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tailândia Mágica · Oficina de Turismo</title>
-  <meta name="description" content="Descubra a Tailândia em uma jornada inesquecível por Bangkok, Chiang Mai, Phuket e Phi Phi. Templos, mercados, elefantes e praias paradisíacas esperam por você.">
+  <meta name="description" content="Descubra a Tailândia em uma jornada inesquecível por Bangkok, Chiang Mai, Phuket e Phi Phi. Viagem em grupo com acompanhamento desde o Brasil.">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --gold:    #C9A84C;
-      --dark:    #1A1A2E;
+      --dark:    #1A1A2E; /* Mantido para textos e elementos escuros */
       --accent:  #7B2D8B;
-      --light:   #F9F5EE;
+      --light:   #F9F5EE; /* Fundo principal */
       --green:   #2E7D52;
       --red:     #C62828;
-      --thai-red: #D32F2F; /* Cor inspirada na bandeira da Tailândia */
-      --thai-blue: #1976D2; /* Cor inspirada na bandeira da Tailândia */
+      --thai-red: #D32F2F; /* Mantido para pequenos detalhes de destaque */
+      --pastel-blue: #B0D9E7; /* Azul pastel para fundos */
+      --pastel-dark-blue: #8FB8C7; /* Um tom um pouco mais escuro para contraste */
+      --soft-gray: #E0E0E0; /* Cinza suave para seções */
+      --text-dark: #333333; /* Cor de texto principal */
+      --text-light: #555555; /* Cor de texto secundária */
     }
 
     * { margin:0; padding:0; box-sizing:border-box; }
@@ -24,7 +28,7 @@
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--light);
-      color: #333;
+      color: var(--text-dark);
     }
 
     /* ── NAV ── */
@@ -32,7 +36,7 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 999;
-      background: rgba(26,26,46,0.97);
+      background: rgba(26,26,46,0.97); /* Fundo escuro para a nav */
       backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
@@ -73,32 +77,47 @@
       background:
         linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.52)),
         url('tailandia-hero.jpg') center/cover no-repeat; /* Imagem de fundo da Tailândia */
-      background-size: cover; /* Garante que a imagem cubra toda a área */
-      background-position: center; /* Centraliza a imagem */
+      background-size: cover;
+      background-position: center;
       color: #fff;
     }
 
     .hero-logo {
-      width: 200px;
+      width: 220px; /* Logo maior no hero */
       margin-bottom: 28px;
       filter: drop-shadow(0 3px 12px rgba(0,0,0,.7));
     }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.6rem, 7vw, 5rem);
+      font-size: clamp(2.8rem, 7vw, 5.5rem); /* Título maior */
       letter-spacing: 3px;
       text-shadow: 0 3px 16px rgba(0,0,0,.5);
       line-height: 1.1;
     }
 
     .hero .subtitle {
-      font-size: clamp(.95rem, 2.5vw, 1.3rem);
-      font-weight: 300;
+      font-size: clamp(1rem, 2.8vw, 1.5rem); /* Subtítulo maior */
+      font-weight: 400; /* Mais leve */
       margin-top: 16px;
       color: var(--gold);
       letter-spacing: 4px;
       text-transform: uppercase;
+    }
+
+    .hero .group-travel-highlight {
+      background: rgba(255,255,255,0.2);
+      border: 2px solid var(--gold);
+      border-radius: 50px;
+      padding: 12px 30px;
+      font-size: clamp(.9rem, 2.5vw, 1.2rem);
+      font-weight: 600;
+      margin-top: 30px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
     }
 
     .hero .badges {
@@ -164,7 +183,7 @@
     }
 
     /* ── INFORMAÇÕES GERAIS ── */
-    .essentials { background: #fff; }
+    .essentials { background: var(--light); } /* Fundo mais claro */
 
     .info-grid {
       display: grid;
@@ -175,12 +194,12 @@
     }
 
     .info-card {
-      background: var(--light);
+      background: #fff; /* Cards brancos */
       border-radius: 18px;
       padding: 34px 26px;
       text-align: center;
       box-shadow: 0 4px 24px rgba(0,0,0,.07);
-      border-top: 4px solid var(--thai-red);
+      border-top: 4px solid var(--gold); /* Borda dourada */
       transition: transform .3s, box-shadow .3s;
     }
 
@@ -189,17 +208,17 @@
       box-shadow: 0 12px 32px rgba(0,0,0,.12);
     }
 
-    .info-card .icon { font-size: 2.6rem; margin-bottom: 16px; }
+    .info-card .icon { font-size: 2.6rem; margin-bottom: 16px; color: var(--gold); } /* Ícones dourados */
     .info-card h3 { color: var(--dark); margin-bottom: 10px; font-size: 1.05rem; font-weight: 600; }
-    .info-card p  { font-size: .86rem; color: #555; line-height: 1.7; }
+    .info-card p  { font-size: .86rem; color: var(--text-light); line-height: 1.7; }
 
     /* ── ROTEIRO DETALHADO ── */
     .itinerary-bg {
-      background: linear-gradient(135deg, var(--thai-blue) 0%, var(--dark) 100%);
-      color: #fff;
+      background: var(--pastel-blue); /* Fundo azul pastel */
+      color: var(--text-dark); /* Texto escuro */
     }
 
-    .itinerary-bg .section-title h2 { color: #fff; }
+    .itinerary-bg .section-title h2 { color: var(--dark); }
     .itinerary-bg .section-title span { color: var(--gold); }
 
     .timeline {
@@ -238,30 +257,31 @@
       align-items: center;
       justify-content: center;
       z-index: 1;
-      box-shadow: 0 0 0 5px var(--thai-blue), 0 0 0 7px var(--gold);
+      box-shadow: 0 0 0 5px var(--pastel-blue), 0 0 0 7px var(--gold); /* Ajustado para pastel */
     }
 
     .day-content {
-      background: rgba(255,255,255,.06);
+      background: #fff; /* Fundo branco para os cards do dia */
       border-radius: 16px;
       padding: 22px 26px;
       flex: 1;
       border-left: 3px solid var(--gold);
-      transition: background .3s;
+      transition: background .3s, box-shadow .3s;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
     }
 
-    .day-content:hover { background: rgba(255,255,255,.10); }
+    .day-content:hover { background: #f0f0f0; box-shadow: 0 4px 15px rgba(0,0,0,.1); }
 
     .day-content h3 {
-      color: var(--gold);
-      font-size: .95rem;
+      color: var(--dark); /* Título do dia mais escuro */
+      font-size: 1.05rem;
       margin-bottom: 10px;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: 600;
     }
 
-    .day-content p { font-size: .86rem; line-height: 1.8; color: #ccc; }
+    .day-content p { font-size: .88rem; line-height: 1.8; color: var(--text-light); }
 
     .tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
 
@@ -280,7 +300,7 @@
     .tag.thai   { background: var(--thai-red); color: #fff; }
 
     /* ── SERVIÇOS ── */
-    .services-section { background: #F0F4F8; }
+    .services-section { background: var(--soft-gray); } /* Fundo cinza suave */
 
     .services-grid {
       display: grid;
@@ -297,21 +317,22 @@
       box-shadow: 0 4px 24px rgba(0,0,0,.08);
     }
 
-    .service-box.included { border-top: 5px solid var(--thai-red); }
+    .service-box.included { border-top: 5px solid var(--gold); } /* Borda dourada */
     .service-box.excluded { border-top: 5px solid var(--red); }
 
     .service-box h3 {
-      font-size: 1.05rem;
+      font-size: 1.15rem; /* Título maior */
       margin-bottom: 22px;
       color: var(--dark);
+      font-weight: 700;
     }
 
     .service-box ul { list-style: none; }
 
     .service-box ul li {
-      font-size: .85rem;
-      color: #444;
-      padding: 8px 0;
+      font-size: .9rem; /* Texto maior */
+      color: var(--text-dark);
+      padding: 10px 0; /* Mais espaçamento */
       border-bottom: 1px dashed #eee;
       display: flex;
       gap: 10px;
@@ -324,7 +345,7 @@
     .service-box.excluded ul li::before { content: '❌'; flex-shrink: 0; }
 
     /* ── VOOS ── */
-    .flights-section { background: #EEF2FF; }
+    .flights-section { background: var(--light); } /* Fundo claro */
 
     .table-wrap {
       overflow-x: auto;
@@ -356,6 +377,7 @@
       font-size: .85rem;
       border-bottom: 1px solid #f0f0f0;
       vertical-align: middle;
+      color: var(--text-dark);
     }
 
     tbody tr:last-child td { border-bottom: none; }
@@ -374,24 +396,27 @@
     .dir-badge.volta { background: #FFCCBC; color: #BF360C; }
 
     /* ── HOSPEDAGEM ── */
-    .hotels-section { background: #fff; }
+    .hotels-section { background: var(--pastel-blue); } /* Fundo azul pastel */
 
     .hotels-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      max-width: 1060px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cards um pouco maiores */
+      gap: 28px; /* Mais espaçamento */
+      max-width: 1100px;
       margin: 0 auto;
     }
 
     .hotel-card {
       background: #fff;
       border-radius: 18px;
-      padding: 36px 28px;
+      padding: 28px; /* Padding ajustado */
       text-align: center;
       box-shadow: 0 4px 24px rgba(0,0,0,.09);
-      border-top: 4px solid var(--thai-red);
+      border-top: 4px solid var(--gold); /* Borda dourada */
       transition: transform .3s, box-shadow .3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .hotel-card:hover {
@@ -399,14 +424,17 @@
       box-shadow: 0 16px 40px rgba(0,0,0,.13);
     }
 
-    .hotel-card .hotel-icon {
-      font-size: 2.8rem;
-      margin-bottom: 16px;
-      display: block;
+    .hotel-card img {
+      width: 100%;
+      height: 180px; /* Altura fixa para as imagens */
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
     }
 
     .hotel-card .city {
-      font-size: .73rem;
+      font-size: .78rem; /* Texto maior */
       color: var(--gold);
       font-weight: 600;
       text-transform: uppercase;
@@ -415,7 +443,8 @@
     }
 
     .hotel-card h3 {
-      font-size: 1rem;
+      font-family: 'Playfair Display', serif; /* Fonte de destaque */
+      font-size: 1.2rem; /* Título maior */
       color: var(--dark);
       font-weight: 700;
       margin-bottom: 10px;
@@ -424,32 +453,70 @@
 
     .hotel-card .nights {
       display: inline-block;
-      background: var(--light);
+      background: var(--soft-gray); /* Fundo cinza suave */
       border: 1px solid var(--gold);
       color: var(--dark);
-      font-size: .75rem;
+      font-size: .8rem; /* Texto maior */
       font-weight: 600;
-      padding: 4px 14px;
+      padding: 6px 16px;
       border-radius: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .hotel-card p {
-      font-size: .8rem;
-      color: #777;
-      line-height: 1.5;
+      font-size: .85rem; /* Texto maior */
+      color: var(--text-light);
+      line-height: 1.6;
     }
 
     .hotel-card .stars {
       color: var(--gold);
-      font-size: .95rem;
+      font-size: 1rem; /* Estrelas maiores */
       margin-top: 10px;
       letter-spacing: 2px;
     }
 
+    /* ── VALORES ── */
+    .pricing-section {
+      background: var(--light);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .pricing-section .price-info {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.1);
+      border-top: 5px solid var(--gold);
+    }
+
+    .pricing-section .price-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: var(--dark);
+      margin-bottom: 20px;
+    }
+
+    .pricing-section .price-info p {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .pricing-section .price-info .note {
+      font-size: .9rem;
+      color: var(--text-light);
+      font-style: italic;
+      margin-top: 20px;
+    }
+
     /* ── CTA ── */
     .cta-section {
-      background: linear-gradient(135deg, var(--thai-blue) 0%, var(--thai-red) 100%);
+      background: linear-gradient(135deg, var(--pastel-dark-blue) 0%, var(--dark) 100%); /* Gradiente mais suave */
       color: #fff;
       text-align: center;
       padding: 100px 20px;
@@ -462,7 +529,7 @@
     }
 
     .cta-section p {
-      color: #bbb;
+      color: #eee;
       margin-bottom: 10px;
       font-size: .95rem;
     }
@@ -470,7 +537,7 @@
     .cta-section .highlight {
       color: var(--gold);
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.1rem; /* Destaque maior */
       margin-bottom: 40px;
       display: block;
     }
@@ -505,8 +572,8 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #0d0d1a;
-      color: #777;
+      background: var(--dark); /* Fundo escuro para o footer */
+      color: #bbb;
       text-align: center;
       padding: 44px 20px;
       font-size: .8rem;
@@ -515,7 +582,7 @@
     footer img {
       height: 52px;
       margin-bottom: 18px;
-      filter: brightness(0) invert(1) opacity(.5);
+      filter: brightness(0) invert(1) opacity(.7); /* Logo mais visível no footer escuro */
     }
 
     footer p { margin-bottom: 6px; line-height: 1.7; }
@@ -526,14 +593,22 @@
     @media (max-width: 768px) {
       nav ul { display: none; }
       nav { padding: 12px 20px; }
+      .hero-logo { width: 180px; } /* Logo menor em mobile */
+      .hero h1 { font-size: 2.8rem; }
+      .hero .subtitle { font-size: 1.1rem; }
+      .hero .group-travel-highlight { font-size: 1rem; padding: 10px 20px; }
       .timeline::before { left: 22px; }
       .day-number { width: 46px; height: 46px; font-size: .88rem; }
       .day { gap: 18px; }
+      .hotels-grid { grid-template-columns: 1fr; }
+      .pricing-section .price-info { padding: 30px 20px; }
     }
 
     @media (max-width: 480px) {
       .hero h1 { font-size: 2.2rem; }
       .badge { padding: 8px 16px; font-size: .8rem; }
+      .cta-buttons { flex-direction: column; }
+      .cta-btn { width: 90%; }
     }
   </style>
 </head>
@@ -548,6 +623,7 @@
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#voos">Voos</a></li>
     <li><a href="#hospedagem">Hospedagem</a></li>
+    <li><a href="#valores">Valores</a></li>
     <li><a href="#contato">Contato</a></li>
   </ul>
 </nav>
@@ -556,7 +632,8 @@
 <section class="hero">
   <img class="hero-logo" src="Logo fundo transparente.png" alt="Oficina de Turismo"/>
   <h1>Tailândia Mágica</h1>
-  <p class="subtitle">✈ 23 de Fevereiro de 2027 &nbsp;|&nbsp; 13 Dias · 12 Noites</p>
+  <p class="subtitle">✈ 08 de Março de 2027 &nbsp;|&nbsp; 13 Dias · 12 Noites</p>
+  <span class="group-travel-highlight">✨ Viagem em Grupo com Acompanhamento desde o Brasil ✨</span>
   <div class="badges">
     <span class="badge">🏯 Bangkok</span>
     <span class="badge">🐘 Chiang Mai</span>
@@ -602,7 +679,7 @@
     <div class="info-card">
       <div class="icon">🌡️</div>
       <h3>Clima</h3>
-      <p>Fevereiro é um mês de <strong>clima seco e agradável</strong>, com temperaturas médias entre 25°C e 32°C.</p>
+      <p>Março é um mês de <strong>clima seco e agradável</strong>, com temperaturas médias entre 26°C e 34°C.</p>
     </div>
   </div>
 </section>
@@ -620,9 +697,8 @@
     <div class="day">
       <div class="day-number">1</div>
       <div class="day-content">
-        <h3>23 Fev — Chegada a Bangkok</h3>
+        <h3>08 Mar — Chegada a Bangkok</h3>
         <p>Chegada ao aeroporto de Bangkok, onde seu guia de língua inglesa o espera, e transferência para o hotel. Tempo livre até o check-in no hotel, conforme disponibilidade (os quartos geralmente ficam disponíveis a partir das 15h). Acomodação em hotel.</p>
-        <p><strong>OPCIONAL: Serviço Fast Track na Chegada Aeroportos de Suvarnabhumi (BKK)</strong> Encontre o assistente no transporte aéreo, ele vai te acompanhar até o balcão de imigração. Ele vai te levar pela aba e te acompanhar até você conhecer o guia. (Não inclui visto, 2000 THB., por favor, prepare o valor em dinheiro. Valor por pessoa USD 160.00 +IOF USD 4.97)</p>
         <div class="tags">
           <span class="tag blue">✈ Voo Internacional</span>
           <span class="tag green">🏨 Hotel em Bangkok</span>
@@ -633,7 +709,7 @@
     <div class="day">
       <div class="day-number">2</div>
       <div class="day-content">
-        <h3>24 Fev — Bangkok - Cidade e Templos, incluindo o Grande Palácio</h3>
+        <h3>09 Mar — Bangkok - Cidade e Templos, incluindo o Grande Palácio</h3>
         <p>Visite três dos templos budistas mais populares, começando pelo <strong>Wat Traimit</strong> (Buda de ouro maciço). O tour continuará então para <strong>Wat Pho</strong> (Buda reclinado e os Chedis dos Reis). Em seguida, você visitará o <strong>Palácio Real</strong>, residência do Rei da Tailândia por 150 anos, e o <strong>Wat Phra Kaew</strong> (Templo do Buda Esmeralda). Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🏯 Templos</span>
@@ -646,7 +722,7 @@
     <div class="day">
       <div class="day-number">3</div>
       <div class="day-content">
-        <h3>25 Fev — Bangkok - Mercado Ferroviário Mae Klong & Mercado Flutuante Damnoen Saduak - Tour pela cidade por Tuk Tuk</h3>
+        <h3>10 Mar — Bangkok - Mercado Ferroviário Mae Klong & Mercado Flutuante Damnoen Saduak - Tour pela cidade por Tuk Tuk</h3>
         <p>Após o café da manhã, traslado para visitar o famoso <strong>mercado de trens Mae Klong</strong>. Em seguida, iremos ao <strong>mercado flutuante Damnoen Saduak</strong> de barco. Depois, visite o <strong>Wat Bang Kung</strong>, um templo escondido entre as raízes de uma árvore. À tarde, passeio pela cidade de tuk tuk, explorando: Chinatown, telhado com vista para a cidade velha, estrada Khao San e parada gastronômica para provar o famoso Pad Thai. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🛍 Mercados</span>
@@ -660,8 +736,8 @@
     <div class="day">
       <div class="day-number">4</div>
       <div class="day-content">
-        <h3>26 Fev — Bangkok – Chiang Mai</h3>
-        <p>Café da manhã no hotel. Após o check-out, traslado para o aeroporto de Bangkok para seu voo para Chiang Mai (não incluído no preço do programa). Chegada em Chiang Mai, traslado para o hotel. Acomodação em hotel.</p>
+        <h3>11 Mar — Bangkok – Chiang Mai</h3>
+        <p>Café da manhã no hotel. Após o check-out, traslado para o aeroporto de Bangkok para seu voo para Chiang Mai. Chegada em Chiang Mai, traslado para o hotel. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag blue">✈ Voo Doméstico</span>
           <span class="tag green">🏨 Hotel em Chiang Mai</span>
@@ -673,7 +749,7 @@
     <div class="day">
       <div class="day-number">5</div>
       <div class="day-content">
-        <h3>27 Fev — Chiang Mai - Tour de Dia Inteiro em Chiang Rai</h3>
+        <h3>12 Mar — Chiang Mai - Tour de Dia Inteiro em Chiang Rai</h3>
         <p>Café da manhã no hotel. Excursão de dia inteiro em Chiang Rai, famosa por seus templos únicos: <strong>Fontes Termais Mae Kachan</strong>, <strong>Templo Branco (Wat Rong Khun)</strong>, <strong>Templo Azul (Wat Rong Suea Ten)</strong>, <strong>Templo Vermelho (Wat Huay Pla Kang)</strong> e <strong>Comunidade Karen</strong> (tribo de mulheres de pescoço comprido). Retorno ao hotel em Chiang Mai. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🏯 Templos</span>
@@ -686,7 +762,7 @@
     <div class="day">
       <div class="day-number">6</div>
       <div class="day-content">
-        <h3>28 Fev — Chiang Mai - Santuário de Elefantes</h3>
+        <h3>13 Mar — Chiang Mai - Santuário de Elefantes</h3>
         <p>Café da manhã no hotel. Visita a um <strong>santuário de elefantes</strong>, onde os animais vivem em um ambiente protegido. Durante a visita: alimentação, caminhada e banho com os elefantes. Almoço tradicional tailandês em um restaurante local. Retorno ao hotel. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🐘 Elefantes</span>
@@ -699,8 +775,8 @@
     <div class="day">
       <div class="day-number">7</div>
       <div class="day-content">
-        <h3>01 Mar — Chiang Mai – Phuket – Phi Phi</h3>
-        <p>Café da manhã no hotel. Após o check-out, traslado para o aeroporto de Chiang Mai para seu voo para Phuket (não incluído no preço do programa). Chegada ao Aeroporto de Phuket, traslado para o píer para pegar a lancha compartilhada até a <strong>Ilha Phi Phi</strong>. Chegada ao píer na Ilha Phi Phi, a equipe do resort o acompanhará até o resort. Acomodação em hotel.</p>
+        <h3>14 Mar — Chiang Mai – Phuket – Phi Phi</h3>
+        <p>Café da manhã no hotel. Após o check-out, traslado para o aeroporto de Chiang Mai para seu voo para Phuket. Chegada ao Aeroporto de Phuket, traslado para o píer para pegar a lancha compartilhada até a <strong>Ilha Phi Phi</strong>. Chegada ao píer na Ilha Phi Phi, a equipe do resort o acompanhará até o resort. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag blue">✈ Voo Doméstico</span>
           <span class="tag green">🏨 Hotel em Phi Phi</span>
@@ -712,7 +788,7 @@
     <div class="day">
       <div class="day-number">8</div>
       <div class="day-content">
-        <h3>02 Mar — Phi Phi - Excursão de Dia Inteiro para a Ilha Phi Phi de Lancha</h3>
+        <h3>15 Mar — Phi Phi - Excursão de Dia Inteiro para a Ilha Phi Phi de Lancha</h3>
         <p>Café da manhã no hotel. Explore a <strong>Ilha Phi Phi</strong> e algumas das paisagens mais famosas de lancha particular. Visitas: <strong>Baía Maya</strong>, lagoas escondidas e paradas para snorkel. Retorne ao resort no final da tarde. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🏝 Praias</span>
@@ -726,7 +802,7 @@
     <div class="day">
       <div class="day-number">9</div>
       <div class="day-content">
-        <h3>03 Mar — Phi Phi - Tour matinal de meio dia em barco tradicional de cauda longa</h3>
+        <h3>16 Mar — Phi Phi - Tour matinal de meio dia em barco tradicional de cauda longa</h3>
         <p>Café da manhã no hotel. Explore as praias e lagoas da região e a <strong>Ilha Phi Phi</strong> em um tradicional barco tailandês longtail. Volte para o resort. Tarde livre. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🛶 Passeio de Barco</span>
@@ -738,7 +814,7 @@
     <div class="day">
       <div class="day-number">10</div>
       <div class="day-content">
-        <h3>04 Mar — Phi Phi</h3>
+        <h3>17 Mar — Phi Phi</h3>
         <p>Café da manhã no hotel. Dia livre para aproveitar à vontade as belezas de Phi Phi.</p>
         <div class="tags">
           <span class="tag thai">☀️ Dia Livre</span>
@@ -750,7 +826,7 @@
     <div class="day">
       <div class="day-number">11</div>
       <div class="day-content">
-        <h3>05 Mar — Phi Phi - Phuket</h3>
+        <h3>18 Mar — Phi Phi - Phuket</h3>
         <p>Café da manhã no hotel. Após o check-out, pegaremos a lancha compartilhada do Phi Phi Pier até o Phuket Pier, onde seu guia que fala inglês estará esperando por você. Transferência para o hotel em Phuket. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag blue">🚤 Traslado Marítimo</span>
@@ -763,7 +839,7 @@
     <div class="day">
       <div class="day-number">12</div>
       <div class="day-content">
-        <h3>06 Mar — Phuket - Passeio de Dia Inteiro pela Ilha James Bond de Lancha</h3>
+        <h3>19 Mar — Phuket - Passeio de Dia Inteiro pela Ilha James Bond de Lancha</h3>
         <p>Café da manhã no hotel. Explore a <strong>Ilha James Bond</strong> e a famosa <strong>Baía de Phang Nga</strong>. Visitas: <strong>Ilha Panak</strong>, <strong>Ilha Hong</strong>, <strong>Vila Flutuante Koh Panyee</strong>, <strong>Ilha James Bond</strong> e <strong>Ilha Naka</strong>. Retorne ao hotel no fim da tarde. Acomodação em hotel.</p>
         <div class="tags">
           <span class="tag thai">🏝 Ilhas</span>
@@ -777,7 +853,7 @@
     <div class="day">
       <div class="day-number">13</div>
       <div class="day-content">
-        <h3>07 Mar — Phuket - Partida</h3>
+        <h3>20 Mar — Phuket - Partida</h3>
         <p>Café da manhã no hotel. Após o check-out, traslado para o aeroporto de Phuket para o voo de volta para casa. <strong>Fim dos nossos serviços.</strong></p>
         <div class="tags">
           <span class="tag blue">✈ Retorno</span>
@@ -801,33 +877,33 @@
     <div class="service-box included">
       <h3>✅ Serviços Incluídos</h3>
       <ul>
-        <li>Guia de língua inglesa durante todos os serviços na Tailândia</li>
-        <li>3 noites de hospedagem em Bangkok com café da manhã</li>
-        <li>Tour de dia inteiro em Bangkok (Cidade e Templos, Grande Palácio)</li>
-        <li>Tour de dia inteiro em Bangkok (Mercado Ferroviário, Mercado Flutuante, Tuk Tuk) com jantar</li>
-        <li>3 noites de hospedagem em Chiang Mai com café da manhã</li>
-        <li>Tour de dia inteiro em Chiang Rai (Templos Branco, Azul, Vermelho, Comunidade Karen)</li>
-        <li>Visita ao Santuário de Elefantes em Chiang Mai com almoço</li>
-        <li>3 noites de hospedagem em Phi Phi com café da manhã</li>
-        <li>Excursão de dia inteiro em Phi Phi de lancha com almoço (Baía Maya, Lagoas, Snorkel)</li>
-        <li>Tour matinal de meio dia em Phi Phi de barco longtail</li>
-        <li>3 noites de hospedagem em Phuket com café da manhã</li>
-        <li>Passeio de dia inteiro pela Ilha James Bond de lancha com almoço (Phang Nga Bay, Koh Panyee, etc.)</li>
-        <li>Todos os traslados terrestres e marítimos conforme roteiro</li>
-        <li>Seguro viagem</li>
+        <li>✈ Passagens aéreas internacionais (Brasil - Tailândia - Brasil)</li>
+        <li>✈ Passagens aéreas domésticas na Tailândia (Bangkok-Chiang Mai, Chiang Mai-Phuket)</li>
+        <li>🎫 Taxas de embarque aeroportuárias</li>
+        <li>✅ Serviço Fast Track na chegada em Bangkok</li>
+        <li>🗣️ Guia de língua inglesa durante todos os serviços na Tailândia</li>
+        <li>🏨 3 noites de hospedagem em Bangkok com café da manhã</li>
+        <li>🏛 Tour de dia inteiro em Bangkok (Cidade e Templos, Grande Palácio)</li>
+        <li>🛍 Tour de dia inteiro em Bangkok (Mercado Ferroviário, Mercado Flutuante, Tuk Tuk) com jantar</li>
+        <li>🏨 3 noites de hospedagem em Chiang Mai com café da manhã</li>
+        <li>🏯 Tour de dia inteiro em Chiang Rai (Templos Branco, Azul, Vermelho, Comunidade Karen)</li>
+        <li>🐘 Visita ao Santuário de Elefantes em Chiang Mai com almoço</li>
+        <li>🏨 3 noites de hospedagem em Phi Phi com café da manhã</li>
+        <li>🏝 Excursão de dia inteiro em Phi Phi de lancha com almoço (Baía Maya, Lagoas, Snorkel)</li>
+        <li>🛶 Tour matinal de meio dia em Phi Phi de barco longtail</li>
+        <li>🏨 3 noites de hospedagem em Phuket com café da manhã</li>
+        <li>🚤 Passeio de dia inteiro pela Ilha James Bond de lancha com almoço (Phang Nga Bay, Koh Panyee, etc.)</li>
+        <li>🚗 Todos os traslados terrestres e marítimos conforme roteiro</li>
+        <li>⚕️ Seguro viagem</li>
       </ul>
     </div>
 
     <div class="service-box excluded">
       <h3>❌ Não Incluídos</h3>
       <ul>
-        <li>Passagens aéreas internacionais (Brasil - Tailândia - Brasil)</li>
-        <li>Passagens aéreas domésticas na Tailândia (Bangkok-Chiang Mai, Chiang Mai-Phuket)</li>
-        <li>Taxas de embarque aeroportuárias</li>
-        <li>Bebidas durante as refeições inclusas</li>
-        <li>Serviço Fast Track na chegada em Bangkok (opcional)</li>
-        <li>Despesas de caráter pessoal</li>
-        <li>Tudo que não estiver especificado como incluso</li>
+        <li>🥂 Bebidas durante as refeições inclusas</li>
+        <li>🛍 Despesas de caráter pessoal</li>
+        <li>❓ Tudo que não estiver especificado como incluso</li>
       </ul>
     </div>
 
@@ -857,7 +933,7 @@
         <tr>
           <td><span class="dir-badge ida">IDA</span></td>
           <td>✈ São Paulo → Bangkok</td>
-          <td>23 Fev 2027</td>
+          <td>08 Mar 2027</td>
           <td><strong>A definir</strong></td>
           <td>XX:XX</td>
           <td>XX:XX</td>
@@ -865,23 +941,23 @@
         <tr>
           <td><span class="dir-badge ida">IDA</span></td>
           <td>✈ Bangkok → Chiang Mai</td>
-          <td>26 Fev 2027</td>
-          <td><strong>Não Incluso</strong></td>
+          <td>11 Mar 2027</td>
+          <td><strong>Incluso</strong></td>
           <td>XX:XX</td>
           <td>XX:XX</td>
         </tr>
         <tr>
           <td><span class="dir-badge ida">IDA</span></td>
           <td>✈ Chiang Mai → Phuket</td>
-          <td>01 Mar 2027</td>
-          <td><strong>Não Incluso</strong></td>
+          <td>14 Mar 2027</td>
+          <td><strong>Incluso</strong></td>
           <td>XX:XX</td>
           <td>XX:XX</td>
         </tr>
         <tr>
           <td><span class="dir-badge volta">VOLTA</span></td>
           <td>✈ Phuket → São Paulo</td>
-          <td>07 Mar 2027</td>
+          <td>20 Mar 2027</td>
           <td><strong>A definir</strong></td>
           <td>XX:XX</td>
           <td>XX:XX</td>
@@ -894,14 +970,14 @@
 <!-- ══════════ HOSPEDAGEM ══════════ -->
 <section class="hotels-section" id="hospedagem">
   <div class="section-title">
-    <span>Conforto garantido</span>
+    <span>Conforto e estilo em cada destino</span>
     <h2>Hospedagens Previstas</h2>
     <div class="line"></div>
   </div>
   <div class="hotels-grid">
 
     <div class="hotel-card">
-      <span class="hotel-icon">🏯</span>
+      <img src="TINIDEE TRENDY BANGKOK KHAOSAN.jpg" alt="TINIDEE TRENDY BANGKOK KHAOSAN"/>
       <p class="city">Bangkok</p>
       <h3>TINIDEE TRENDY BANGKOK KHAOSAN</h3>
       <span class="nights">3 noites</span>
@@ -910,7 +986,7 @@
     </div>
 
     <div class="hotel-card">
-      <span class="hotel-icon">🐘</span>
+      <img src="KANTARY CHIANG MAI.jpg" alt="KANTARY CHIANG MAI"/>
       <p class="city">Chiang Mai</p>
       <h3>KANTARY CHIANG MAI</h3>
       <span class="nights">3 noites</span>
@@ -919,7 +995,7 @@
     </div>
 
     <div class="hotel-card">
-      <span class="hotel-icon">🏝️</span>
+      <img src="PHI PHI PRINCESS RESORT.jpg" alt="PHI PHI PRINCESS RESORT"/>
       <p class="city">Phi Phi</p>
       <h3>PHI PHI PRINCESS RESORT</h3>
       <span class="nights">3 noites</span>
@@ -928,30 +1004,45 @@
     </div>
 
     <div class="hotel-card">
-      <span class="hotel-icon">🐠</span>
+      <img src="THE CHARM RESORT.jpg" alt="THE CHARM RESORT"/>
       <p class="city">Phuket</p>
-      <h3>KATA PALM RESORT</h3>
+      <h3>THE CHARM RESORT</h3>
       <span class="nights">3 noites</span>
-      <p>ou similar · Hab. Ala Azul Real Superior · com café da manhã incluso</p>
+      <p>ou similar · Hab. Deluxe · com café da manhã incluso</p>
       <p class="stars">Superior</p>
     </div>
 
   </div>
 </section>
 
+<!-- ══════════ VALORES ══════════ -->
+<section class="pricing-section" id="valores">
+  <div class="section-title">
+    <span>Invista em uma experiência única</span>
+    <h2>Valores do Pacote</h2>
+    <div class="line"></div>
+  </div>
+  <div class="price-info">
+    <h3>A partir de: <span style="color: var(--gold);">USD XXXX,XX</span></h3>
+    <p>Valor por pessoa em acomodação dupla.</p>
+    <p><strong>Suplemento para apartamento individual (SGL):</strong> Sob consulta.</p>
+    <p class="note">Os valores podem variar conforme a disponibilidade e o período da reserva. Consulte-nos para uma cotação personalizada.</p>
+  </div>
+</section>
+
 <!-- ══════════ CTA / CONTATO ══════════ -->
 <section class="cta-section" id="contato">
   <h2>Garanta sua vaga!</h2>
-  <p>Vagas limitadas · Saída <strong>23 de Fevereiro de 2027</strong></p>
+  <p>Vagas limitadas · Saída <strong>08 de Março de 2027</strong></p>
   <span class="highlight">✨ Oficina de Turismo · Realizando sonhos há mais de 30 anos</span>
   <div class="cta-buttons">
     <a class="cta-btn whatsapp"
-       href="https://wa.me/553598862-2943?text=Ol%C3%A1%21+Tenho+interesse+no+pacote+Tail%C3%A2ndia+M%C3%A1gica+2027+%F0%9F%87%B9%F0%9F%87%AD"
+       href="https://wa.me/553598862-2943?text=Ol%C3%A1%21+Tenho+interesse+no+pacote+Tail%C3%A2ndia+M%C3%A1gica+com+sa%C3%ADda+em+08%2F03%2F2027+%F0%9F%87%B9%F0%9F%87%AD"
        target="_blank">
       💬 WhatsApp (35) 98862-2943
     </a>
     <a class="cta-btn email"
-       href="mailto:oficinadeturismo@oficinatur.com.br?subject=Interesse%20Tail%C3%A2ndia%20M%C3%A1gica%202027"
+       href="mailto:oficinadeturismo@oficinatur.com.br?subject=Interesse%20Tail%C3%A2ndia%20M%C3%A1gica%2008%20Mar%C3%A7o%202027"
        target="_blank">
       📧 Enviar E-mail
     </a>
