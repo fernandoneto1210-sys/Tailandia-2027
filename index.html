@@ -342,10 +342,13 @@
       box-shadow: 0 12px 30px rgba(0,0,0,.15);
     }
 
-    .experience-card .icon {
-      font-size: 3rem;
-      color: var(--military-green);
+    .experience-card .icon-img { /* Novo estilo para as imagens */
+      width: 80px; /* Tamanho fixo para as imagens */
+      height: 80px;
+      object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
       margin-bottom: 15px;
+      border-radius: 50%; /* Se quiser um efeito circular */
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
     }
 
     .experience-card h3 {
@@ -362,112 +365,128 @@
     }
 
     /* ── SERVIÇOS ── */
-    .services-section { background: var(--soft-gray); }
+    .services-section {
+      background: var(--soft-gray); /* Fundo cinza suave */
+      color: var(--text-dark);
+    }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
-      max-width: 1060px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
     .service-box {
       background: #fff;
       border-radius: 18px;
-      padding: 34px 30px;
-      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+      transition: transform .3s, box-shadow .3s;
     }
 
-    .service-box.included { border-top: 5px solid var(--military-green); } /* Borda verde militar */
-    .service-box.excluded { border-top: 5px solid var(--earth-brown); } /* Borda marrom */
+    .service-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.12);
+    }
+
+    .service-box.included { border-top: 4px solid var(--military-green); }
+    .service-box.excluded { border-top: 4px solid var(--earth-brown); }
 
     .service-box h3 {
-      font-size: 1.15rem;
-      margin-bottom: 22px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
       color: var(--dark);
-      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
     }
 
-    .service-box ul { list-style: none; }
+    .service-box ul {
+      list-style: none;
+      padding: 0;
+    }
 
     .service-box ul li {
-      font-size: .9rem;
+      font-size: .95rem;
       color: var(--text-dark);
-      padding: 10px 0;
-      border-bottom: 1px dashed #eee;
+      margin-bottom: 12px;
+      line-height: 1.5;
       display: flex;
-      gap: 10px;
-      line-height: 1.6;
       align-items: flex-start;
+      gap: 10px;
     }
 
-    .service-box ul li:last-child { border-bottom: none; }
-    .service-box.included ul li::before {
-      content: '✓';
-      color: var(--military-green);
-      font-weight: 700;
-      margin-right: 5px;
+    .service-box ul li::before {
+      content: '•'; /* Marcador de lista personalizado */
+      color: var(--gold);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
     }
-    .service-box.excluded ul li::before {
-      content: '✗';
-      color: var(--earth-brown);
-      font-weight: 700;
-      margin-right: 5px;
-    }
+
+    .service-box.included ul li::before { content: '✅'; color: var(--military-green); }
+    .service-box.excluded ul li::before { content: '❌'; color: var(--earth-brown); }
 
     /* ── VOOS ── */
-    .flights-section { background: var(--pastel-blue); } /* Fundo azul pastel */
+    .flights-section {
+      background: var(--pastel-green); /* Fundo verde pastel */
+      color: var(--text-dark);
+    }
 
     .table-wrap {
       overflow-x: auto;
       max-width: 100%;
       margin: 0 auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,.08);
     }
 
-    table {
+    .flights-section table {
       width: 100%;
       border-collapse: collapse;
+      margin: 0 auto;
       background: #fff;
-      min-width: 600px; /* Garante que a tabela não fique muito estreita */
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
     }
 
-    th, td {
+    .flights-section th, .flights-section td {
       padding: 15px 20px;
       text-align: left;
-      border-bottom: 1px solid #f0f0f0;
-      vertical-align: middle;
+      border-bottom: 1px solid #eee;
+      font-size: .9rem;
       color: var(--text-dark);
     }
 
-    thead th {
-      background: var(--dark);
+    .flights-section th {
+      background: var(--military-green);
       color: #fff;
       font-weight: 600;
       text-transform: uppercase;
-      font-size: .85rem;
       letter-spacing: .5px;
     }
 
-    tbody tr:last-child td { border-bottom: none; }
-    tbody tr:hover { background: #f9f5ee; }
+    .flights-section tr:last-child td { border-bottom: none; }
+    .flights-section tbody tr:hover { background: #f9f9f9; }
 
     .dir-badge {
       display: inline-block;
-      padding: 4px 14px;
+      padding: 4px 10px;
       border-radius: 20px;
-      font-size: .73rem;
-      font-weight: 700;
-      letter-spacing: .5px;
+      font-size: .75rem;
+      font-weight: 600;
+      color: #fff;
     }
 
-    .dir-badge.ida   { background: var(--light-military-green); color: var(--dark); }
-    .dir-badge.volta { background: var(--light-brown); color: var(--dark); }
+    .dir-badge.ida { background: var(--military-green); }
+    .dir-badge.volta { background: var(--earth-brown); }
 
     /* ── HOSPEDAGEM ── */
-    .hotels-section { background: var(--pastel-green); } /* Fundo verde pastel */
+    .hotels-section {
+      background: var(--light);
+      color: var(--text-dark);
+    }
 
     .hotels-grid {
       display: grid;
@@ -549,7 +568,7 @@
 
     /* ── VALORES ── */
     .pricing-section {
-      background: var(--light);
+      background: var(--pastel-blue); /* Fundo azul pastel */
       padding: 60px 20px;
       text-align: center;
     }
@@ -587,7 +606,7 @@
 
     /* ── CTA ── */
     .cta-section {
-      background: linear-gradient(135deg, var(--military-green), var(--earth-brown)); /* Gradiente verde militar e marrom */
+      background: linear-gradient(135deg, var(--military-green), var(--earth-brown)); /* Gradiente verde/marrom */
       color: #fff;
       text-align: center;
       padding: 60px 20px;
@@ -595,25 +614,24 @@
 
     .cta-section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 20px;
-      text-shadow: 0 2px 10px rgba(0,0,0,.3);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      margin-bottom: 15px;
+      text-shadow: 0 2px 8px rgba(0,0,0,.3);
     }
 
     .cta-section p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      opacity: .9;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      margin-bottom: 25px;
+      font-weight: 300;
     }
 
     .cta-section .highlight {
       display: block;
       font-size: .9rem;
       font-weight: 500;
-      letter-spacing: 1px;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       color: var(--gold);
-      text-shadow: 0 1px 5px rgba(0,0,0,.2);
+      letter-spacing: 1px;
     }
 
     .cta-buttons {
@@ -621,8 +639,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
+      margin-top: 30px;
     }
 
     .cta-btn {
@@ -635,9 +652,6 @@
       font-size: 1rem;
       transition: background .3s, transform .3s, box-shadow .3s;
       box-shadow: 0 4px 15px rgba(0,0,0,.2);
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .cta-btn:hover {
@@ -648,7 +662,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--dark);
+      background: var(--dark); /* Fundo escuro */
       color: #ccc;
       text-align: center;
       padding: 40px 20px;
@@ -656,55 +670,69 @@
     }
 
     footer img {
-      height: 40px;
+      height: 50px;
       margin-bottom: 20px;
-      filter: brightness(0.8) grayscale(0.2); /* Suaviza o logo no footer escuro */
+      filter: brightness(0) invert(1); /* Para logos escuros em fundo escuro */
     }
 
-    footer p { margin-bottom: 8px; }
-    footer a { color: var(--gold); text-decoration: none; transition: color .3s; }
+    footer p {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color .3s;
+    }
+
     footer a:hover { color: #fff; }
 
     /* ── RESPONSIVIDADE ── */
     @media (max-width: 768px) {
-      nav { padding: 10px 15px; }
-      nav ul { display: none; } /* Oculta o menu de navegação em telas menores */
+      nav { padding: 10px 20px; }
+      nav ul { display: none; } /* Oculta menu em mobile, pode ser substituído por um menu hambúrguer */
+      nav img { height: 38px; }
+
       .hero { padding: 80px 15px 40px; }
       .hero-logo { width: 180px; }
       .hero h1 { font-size: clamp(2.2rem, 8vw, 4rem); }
-      .hero .subtitle { font-size: clamp(.8rem, 3vw, 1.1rem); }
-      .hero .group-travel-highlight, .hero .experience-text { font-size: clamp(.8rem, 3vw, 1.1rem); padding: 10px 20px; }
-      .section-title { margin-bottom: 40px; }
-      .section-title h2 { font-size: clamp(1.6rem, 5vw, 2.5rem); }
+      .hero .subtitle { font-size: clamp(.8rem, 3vw, 1.1rem); letter-spacing: 2px; }
+      .hero .group-travel-highlight { font-size: clamp(.8rem, 3vw, 1.1rem); padding: 10px 20px; }
+      .hero .experience-text { font-size: clamp(.8rem, 3vw, 1.1rem); }
+
       section { padding: 60px 15px; }
+      .section-title { margin-bottom: 40px; }
+      .section-title h2 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+
       .timeline::before { left: 15px; }
-      .day { gap: 15px; }
+      .day { flex-direction: column; gap: 15px; }
       .day-number { width: 50px; height: 50px; font-size: 1rem; box-shadow: 0 0 0 3px var(--pastel-sand), 0 0 0 5px var(--military-green); }
-      .day-content { padding: 18px 20px; }
-      .day-content h3 { font-size: .95rem; }
-      .day-content p { font-size: .8rem; }
-      .tags { margin-top: 10px; }
-      .tag { font-size: .65rem; padding: 2px 10px; }
-      .services-grid, .hotels-grid, .info-grid, .experiences-grid { grid-template-columns: 1fr; }
-      .service-box ul li { font-size: .85rem; padding: 8px 0; }
-      table { min-width: 100%; }
-      th, td { padding: 12px 15px; font-size: .8rem; }
-      thead th { font-size: .75rem; }
+      .day-content { margin-left: 0; border-left: none; border-top: 3px solid var(--military-green); padding: 18px 20px; }
+
+      .experiences-grid, .services-grid, .hotels-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flights-section th, .flights-section td { padding: 12px 15px; font-size: .85rem; }
+
       .pricing-section .price-info { padding: 30px; }
       .pricing-section .price-info h3 { font-size: clamp(1.3rem, 5vw, 2rem); }
       .pricing-section .price-info p { font-size: 1rem; }
+
       .cta-buttons { flex-direction: column; }
       .cta-btn { width: 100%; max-width: 300px; }
+
+      footer img { height: 40px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ══════════ NAV ══════════ -->
+  <!-- ══════════ NAVEGAÇÃO ══════════ -->
   <nav>
-    <a href="#hero"><img src="Logo fundo transparente.png" alt="Oficina de Turismo"/></a>
+    <img src="Logo fundo transparente.png" alt="Oficina de Turismo"/>
     <ul>
-      <li><a href="#informacoes">Informações</a></li>
       <li><a href="#roteiro">Roteiro</a></li>
       <li><a href="#experiencias">Experiências</a></li>
       <li><a href="#servicos">Serviços</a></li>
@@ -715,12 +743,12 @@
     </ul>
   </nav>
 
-  <!-- ══════════ HERO ══════════ -->
-  <section class="hero" id="hero">
+  <!-- ══════════ HERO SECTION ══════════ -->
+  <section class="hero">
     <img src="Logo fundo transparente.png" alt="Oficina de Turismo" class="hero-logo"/>
     <h1>Tailândia Mágica</h1>
-    <p class="subtitle">Uma jornada inesquecível pela terra dos sorrisos</p>
-    <span class="group-travel-highlight">Viagem em Grupo com Acompanhamento desde o Brasil</span>
+    <p class="subtitle">Saída 08 de Março de 2027</p>
+    <span class="group-travel-highlight">✈️ Viagem em Grupo com Acompanhamento desde o Brasil!</span>
     <p class="experience-text">Venha viver esta experiência!</p>
     <div class="badges">
       <span class="badge">Bangkok</span>
@@ -728,7 +756,7 @@
       <span class="badge">Phuket</span>
       <span class="badge">Phi Phi</span>
     </div>
-    <p class="scroll-hint">Role para saber mais 👇</p>
+    <p class="scroll-hint">Role para descobrir mais 👇</p>
   </section>
 
   <!-- ══════════ INFORMAÇÕES GERAIS ══════════ -->
@@ -755,25 +783,25 @@
       <div class="info-card">
         <span class="icon">📄</span>
         <h3>Documentação</h3>
-        <p>Passaporte válido por no mínimo 6 meses a partir da data de entrada na Tailândia.</p>
+        <p>Passaporte válido por no mínimo 6 meses após a data de retorno. Verifique outras exigências.</p>
       </div>
 
       <div class="info-card">
-        <span class="icon">฿</span>
+        <span class="icon">💰</span>
         <h3>Moeda</h3>
-        <p>Baht Tailandês (THB). Dólares americanos são amplamente aceitos em casas de câmbio.</p>
+        <p>A moeda oficial é o Baht Tailandês (THB). Dólares americanos são amplamente aceitos.</p>
       </div>
 
       <div class="info-card">
         <span class="icon">🗣️</span>
         <h3>Idioma</h3>
-        <p>Tailandês. O inglês é falado em áreas turísticas e hotéis.</p>
+        <p>O idioma oficial é o Tailandês. Inglês é falado em áreas turísticas e hotéis.</p>
       </div>
 
       <div class="info-card">
         <span class="icon">☀️</span>
         <h3>Clima</h3>
-        <p>Tropical, com temperaturas elevadas e alta umidade. Março é início da estação quente.</p>
+        <p>Março é o início da estação quente e seca, com temperaturas elevadas e pouca chuva.</p>
       </div>
 
     </div>
@@ -782,32 +810,31 @@
   <!-- ══════════ ROTEIRO DETALHADO ══════════ -->
   <section class="itinerary-bg" id="roteiro">
     <div class="section-title">
-      <span>Dia a dia da sua aventura</span>
+      <span>Sua jornada dia a dia</span>
       <h2>Roteiro Detalhado</h2>
       <div class="line"></div>
     </div>
     <div class="timeline">
 
       <div class="day">
-        <div class="day-number">01</div>
+        <div class="day-number">Dia 1</div>
         <div class="day-content">
-          <h3>08 Mar — Chegada em Bangkok</h3>
-          <p>Chegada ao aeroporto de Bangkok, onde seu guia de língua inglesa o espera, e traslado para o hotel. Tempo livre até o check-in no hotel. Acomodação em hotel.</p>
+          <h3>08 Mar 2027 - Chegada em Bangkok</h3>
+          <p>Chegada ao aeroporto de Bangkok, onde seu guia de língua inglesa o espera, e transferência para o hotel. Tempo livre até o check-in no hotel, conforme disponibilidade (os quartos geralmente ficam disponíveis a partir das 15h). Acomodação em hotel.</p>
           <div class="tags">
             <span class="tag green">✈ Chegada</span>
-            <span class="tag blue">🏨 Hotel</span>
+            <span class="tag gold">☕ Café da manhã incluso</span>
           </div>
         </div>
       </div>
 
       <div class="day">
-        <div class="day-number">02</div>
+        <div class="day-number">Dia 2</div>
         <div class="day-content">
-          <h3>09 Mar — Bangkok: Cidade e Templos</h3>
-          <p>Após o café da manhã, tour de dia inteiro pela cidade e templos, incluindo o Grande Palácio, Templo do Buda de Esmeralda (Wat Phra Kaeo), Templo do Buda Reclinado (Wat Pho) e Templo do Amanhecer (Wat Arun). Almoço incluso.</p>
+          <h3>09 Mar 2027 - Bangkok (Cidade e Templos, Grande Palácio)</h3>
+          <p>Após o café da manhã, saída para um tour de dia inteiro em Bangkok. Visita aos principais templos: Wat Trimit (Buda de Ouro), Wat Pho (Buda Reclinado) e o impressionante Grande Palácio Real, incluindo o Templo do Buda de Esmeralda (Wat Phra Kaeo). Almoço incluído. Retorno ao hotel.</p>
           <div class="tags">
-            <span class="tag green">🏛 Templos</span>
-            <span class="tag blue">👑 Palácio</span>
+            <span class="tag blue">🏛 Templos</span>
             <span class="tag gold">☕ Café da manhã incluso</span>
             <span class="tag gold">🍽 Almoço incluso</span>
           </div>
@@ -815,14 +842,13 @@
       </div>
 
       <div class="day">
-        <div class="day-number">03</div>
+        <div class="day-number">Dia 3</div>
         <div class="day-content">
-          <h3>10 Mar — Bangkok: Mercados e Tuk Tuk</h3>
-          <p>Café da manhã. Tour de dia inteiro para o Mercado Ferroviário de Maeklong e o Mercado Flutuante de Damnoen Saduak. À noite, passeio de Tuk Tuk pelos mercados noturnos e jantar de despedida em Bangkok.</p>
+          <h3>10 Mar 2027 - Bangkok (Mercado Ferroviário, Mercado Flutuante, Tuk Tuk)</h3>
+          <p>Café da manhã e saída para uma experiência única. Visita ao Mercado Ferroviário de Maeklong, onde os vendedores recolhem suas barracas a cada passagem do trem. Em seguida, passeio de barco pelo Mercado Flutuante de Damnoen Saduak. À noite, um emocionante passeio de Tuk Tuk pela cidade, explorando os mercados noturnos e desfrutando de um jantar típico.</p>
           <div class="tags">
-            <span class="tag green">🛍 Mercados</span>
-            <span class="tag blue">🛶 Flutuante</span>
-            <span class="tag purple">🛵 Tuk Tuk</span>
+            <span class="tag purple">🛍 Mercados</span>
+            <span class="tag thai">🛵 Tuk Tuk</span>
             <span class="tag gold">☕ Café da manhã incluso</span>
             <span class="tag gold">🍽 Jantar incluso</span>
           </div>
@@ -830,26 +856,38 @@
       </div>
 
       <div class="day">
-        <div class="day-number">04</div>
+        <div class="day-number">Dia 4</div>
         <div class="day-content">
-          <h3>11 Mar — Bangkok – Chiang Mai</h3>
-          <p>Após o café da manhã, traslado ao aeroporto de Bangkok para voo doméstico para Chiang Mai. Chegada e traslado ao hotel. Restante do dia livre para explorar a "Rosa do Norte".</p>
+          <h3>11 Mar 2027 - Bangkok – Chiang Mai</h3>
+          <p>Após o café da manhã, traslado ao aeroporto de Bangkok para voo doméstico com destino a Chiang Mai. Chegada e traslado ao hotel. Restante do dia livre para explorar a "Rosa do Norte" da Tailândia. Acomodação em hotel.</p>
           <div class="tags">
             <span class="tag green">✈ Voo Doméstico</span>
-            <span class="tag blue">🏨 Hotel</span>
             <span class="tag gold">☕ Café da manhã incluso</span>
           </div>
         </div>
       </div>
 
       <div class="day">
-        <div class="day-number">05</div>
+        <div class="day-number">Dia 5</div>
         <div class="day-content">
-          <h3>12 Mar — Chiang Mai: Santuário de Elefantes</h3>
-          <p>Café da manhã. Visita ao Santuário de Elefantes, onde você terá a oportunidade de interagir de forma ética com esses animais majestosos, alimentá-los e aprender sobre sua conservação. Almoço incluso no santuário.</p>
+          <h3>12 Mar 2027 - Chiang Mai (Chiang Rai, Templos e Comunidade Karen)</h3>
+          <p>Café da manhã e saída para um tour de dia inteiro em Chiang Rai. Visita ao famoso Templo Branco (Wat Rong Khun), Templo Azul (Wat Rong Suea Ten) e Templo Vermelho (Wat Huay Pla Kang). Em seguida, visita a uma comunidade da tribo Karen (Mulheres-Girafa). Almoço incluído. Retorno a Chiang Mai.</p>
+          <div class="tags">
+            <span class="tag blue">🏯 Templos</span>
+            <span class="tag purple">🧑‍🤝‍🧑 Cultura Local</span>
+            <span class="tag gold">☕ Café da manhã incluso</span>
+            <span class="tag gold">🍽 Almoço incluso</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">Dia 6</div>
+        <div class="day-content">
+          <h3>13 Mar 2027 - Chiang Mai (Santuário de Elefantes)</h3>
+          <p>Após o café da manhã, visita a um santuário de elefantes ético, onde você terá a oportunidade de interagir com esses animais majestosos de forma responsável. Aprenda sobre seus hábitos, alimente-os e observe-os em seu habitat natural. Almoço incluído no santuário. Tarde livre. Acomodação em hotel.</p>
           <div class="tags">
             <span class="tag green">🐘 Elefantes</span>
-            <span class="tag blue">🌿 Conservação</span>
             <span class="tag gold">☕ Café da manhã incluso</span>
             <span class="tag gold">🍽 Almoço incluso</span>
           </div>
@@ -857,80 +895,26 @@
       </div>
 
       <div class="day">
-        <div class="day-number">06</div>
+        <div class="day-number">Dia 7</div>
         <div class="day-content">
-          <h3>13 Mar — Chiang Mai: Chiang Rai e Tribos</h3>
-          <p>Café da manhã. Excursão de dia inteiro a Chiang Rai, visitando o Templo Branco (Wat Rong Khun), o Templo Azul (Wat Rong Suea Ten) e o Templo Vermelho (Wat Huay Pla Kang). Visita à comunidade das Mulheres-Girafa (Karen Long Neck Tribe). Almoço incluso.</p>
+          <h3>14 Mar 2027 - Chiang Mai – Phuket – Phi Phi</h3>
+          <p>Café da manhã e traslado ao aeroporto de Chiang Mai para voo doméstico com destino a Phuket. Chegada em Phuket e traslado ao píer para embarque em lancha rápida com destino a Phi Phi. Chegada e traslado ao hotel. Restante do dia livre para desfrutar das praias paradisíacas.</p>
           <div class="tags">
-            <span class="tag green">🏯 Templos</span>
-            <span class="tag blue">🧑‍🤝‍🧑 Cultura Local</span>
-            <span class="tag gold">☕ Café da manhã incluso</span>
-            <span class="tag gold">🍽 Almoço incluso</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="day-number">07</div>
-        <div class="day-content">
-          <h3>14 Mar — Chiang Mai – Phuket – Phi Phi</h3>
-          <p>Café da manhã. Traslado ao aeroporto de Chiang Mai para voo doméstico para Phuket. Chegada em Phuket e traslado ao porto para embarque em lancha rápida para as Ilhas Phi Phi. Acomodação em hotel em Phi Phi.</p>
-          <div class="tags">
-            <span class="tag green">✈ Voo Doméstico</span>
-            <span class="tag blue">🚤 Lancha Rápida</span>
+            <span class="tag blue">✈ Voo Doméstico</span>
+            <span class="tag thai">🚤 Lancha</span>
             <span class="tag gold">☕ Café da manhã incluso</span>
           </div>
         </div>
       </div>
 
       <div class="day">
-        <div class="day-number">08</div>
+        <div class="day-number">Dia 8</div>
         <div class="day-content">
-          <h3>15 Mar — Phi Phi: Praias e Snorkel</h3>
-          <p>Café da manhã. Excursão de dia inteiro de lancha rápida pelas Ilhas Phi Phi, incluindo a famosa Baía Maya (cenário do filme "A Praia"), Lagoa Pileh, Caverna Viking e paradas para snorkel em águas cristalinas. Almoço incluso.</p>
-          <div class="tags">
-            <span class="tag green">🏝 Praias</span>
-            <span class="tag blue">🐠 Snorkel</span>
-            <span class="tag gold">☕ Café da manhã incluso</span>
-            <span class="tag gold">🍽 Almoço incluso</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="day-number">09</div>
-        <div class="day-content">
-          <h3>16 Mar — Phi Phi: Barco Longtail e Caiaque</h3>
-          <p>Café da manhã. Tour matinal de meio dia em barco longtail tradicional, explorando enseadas escondidas e formações rochosas. Oportunidade para caiaque em águas calmas. Tarde livre para relaxar na praia ou explorar a ilha.</p>
-          <div class="tags">
-            <span class="tag green">🛶 Barco Longtail</span>
-            <span class="tag blue">🏖 Relaxamento</span>
-            <span class="tag gold">☕ Café da manhã incluso</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="day-number">10</div>
-        <div class="day-content">
-          <h3>17 Mar — Phi Phi – Phuket</h3>
-          <p>Café da manhã. Manhã livre em Phi Phi. No início da tarde, embarque em lancha rápida de volta para Phuket. Traslado ao hotel em Phuket. Restante do dia livre.</p>
-          <div class="tags">
-            <span class="tag green">🚤 Lancha Rápida</span>
-            <span class="tag blue">🏨 Hotel</span>
-            <span class="tag gold">☕ Café da manhã incluso</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="day-number">11</div>
-        <div class="day-content">
-          <h3>18 Mar — Phuket: Ilha James Bond</h3>
-          <p>Café da manhã. Passeio de dia inteiro de lancha rápida pela Baía de Phang Nga, incluindo a famosa Ilha James Bond (Koh Tapu), a vila flutuante de Koh Panyee e exploração de cavernas e lagoas de caiaque. Almoço incluso.</p>
+          <h3>15 Mar 2027 - Phi Phi (Excursão de Lancha)</h3>
+          <p>Após o café da manhã, saída para uma emocionante excursão de dia inteiro de lancha pelas ilhas de Phi Phi. Visita à famosa Baía Maya (cenário do filme "A Praia"), Pileh Lagoon, Viking Cave e Monkey Beach. Tempo para snorkel e relaxamento nas praias. Almoço incluído. Retorno ao hotel.</p>
           <div class="tags">
             <span class="tag green">🏝 Ilhas</span>
-            <span class="tag blue">🛶 Caiaque</span>
+            <span class="tag purple">🤿 Snorkel</span>
             <span class="tag gold">☕ Café da manhã incluso</span>
             <span class="tag gold">🍽 Almoço incluso</span>
           </div>
@@ -938,23 +922,61 @@
       </div>
 
       <div class="day">
-        <div class="day-number">12</div>
+        <div class="day-number">Dia 9</div>
         <div class="day-content">
-          <h3>19 Mar — Phuket: Dia Livre</h3>
-          <p>Café da manhã. Dia livre para desfrutar das praias de Phuket, fazer compras, ou explorar as atrações locais como o Grande Buda e a Cidade Velha de Phuket. O acompanhante estará à disposição para sugestões.</p>
+          <h3>16 Mar 2027 - Phi Phi (Tour de Barco Longtail)</h3>
+          <p>Café da manhã e manhã livre para atividades opcionais ou relaxamento. À tarde, saída para um tour matinal de meio dia em barco longtail, explorando enseadas secretas e praias menos acessíveis de Phi Phi. Possibilidade de caiaque. Retorno ao hotel.</p>
           <div class="tags">
-            <span class="tag green">🏖 Dia Livre</span>
-            <span class="tag blue">🛍 Compras</span>
+            <span class="tag blue">🛶 Barco Longtail</span>
+            <span class="tag thai">🚣 Caiaque</span>
             <span class="tag gold">☕ Café da manhã incluso</span>
           </div>
         </div>
       </div>
 
       <div class="day">
-        <div class="day-number">13</div>
+        <div class="day-number">Dia 10</div>
         <div class="day-content">
-          <h3>20 Mar — Phuket - Partida</h3>
-          <p>Café da manhã no hotel. Após o check-out, traslado para o aeroporto de Phuket para o voo de volta para casa. <strong>Fim dos nossos serviços.</strong></p>
+          <h3>17 Mar 2027 - Phi Phi</h3>
+          <p>Dia livre para desfrutar das belezas de Phi Phi ao seu próprio ritmo. Relaxe na praia, explore a vila local, faça compras ou aproveite para mergulhar. Acomodação em hotel.</p>
+          <div class="tags">
+            <span class="tag green">🏖 Dia Livre</span>
+            <span class="tag gold">☕ Café da manhã incluso</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">Dia 11</div>
+        <div class="day-content">
+          <h3>18 Mar 2027 - Phi Phi - Phuket</h3>
+          <p>Café da manhã e manhã livre. No horário apropriado, traslado ao píer para embarque em lancha rápida com destino a Phuket. Chegada e traslado ao hotel. Restante do dia livre para explorar Phuket.</p>
+          <div class="tags">
+            <span class="tag blue">🚤 Lancha</span>
+            <span class="tag gold">☕ Café da manhã incluso</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">Dia 12</div>
+        <div class="day-content">
+          <h3>19 Mar 2027 - Phuket (Ilha James Bond e Baía de Phang Nga)</h3>
+          <p>Após o café da manhã, saída para um emocionante passeio de dia inteiro de lancha pela Baía de Phang Nga. Visita à famosa Ilha James Bond (Koh Tapu), cavernas marinhas e a vila flutuante de Koh Panyee. Tempo para caiaque e nado. Almoço incluído. Retorno ao hotel.</p>
+          <div class="tags">
+            <span class="tag green">🎬 Ilha James Bond</span>
+            <span class="tag purple">🚣 Caiaque</span>
+            <span class="tag gold">☕ Café da manhã incluso</span>
+            <span class="tag gold">🍽 Almoço incluso</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-number">Dia 13</div>
+        <div class="day-content">
+          <h3>20 Mar 2027 - Phuket - Partida</h3>
+          <p>Café da manhã no hotel. Após o check-out, conheça seu guia de língua inglesa e faça a transferência para o aeroporto de Phuket para o voo de volta para casa. <strong>Fim dos nossos serviços.</strong></p>
           <div class="tags">
             <span class="tag blue">✈ Retorno</span>
             <span class="tag gold">☕ Café da manhã incluso</span>
@@ -969,67 +991,67 @@
   <section class="experiences-section" id="experiencias">
     <div class="section-title">
       <span>Momentos que ficarão para sempre</span>
-      <h2>Experiências Inesquecíveis</h2>
+      <h2>Suas 10 Experiências Inesquecíveis</h2>
       <div class="line"></div>
     </div>
     <div class="experiences-grid">
 
       <div class="experience-card">
-        <span class="icon">🏛️</span>
+        <img src="PALACIOS.jpg" alt="Palácios e Templos de Bangkok" class="icon-img"/>
         <h3>Exploração do Grande Palácio e Templos de Bangkok</h3>
         <p>Maravilhe-se com a arquitetura deslumbrante do Grande Palácio e a serenidade dos templos Wat Phra Kaeo, Wat Pho e Wat Arun.</p>
       </div>
 
       <div class="experience-card">
-        <span class="icon">🛵</span>
+        <img src="TUK TUK.jpg" alt="Aventura de Tuk Tuk em Bangkok" class="icon-img"/>
         <h3>Aventura de Tuk Tuk e Mercados Noturnos em Bangkok</h3>
         <p>Sinta a energia de Bangkok em um emocionante passeio de Tuk Tuk, explorando os vibrantes mercados noturnos da cidade.</p>
       </div>
 
       <div class="experience-card">
-        <span class="icon">🛶</span>
+        <img src="MERCADOS.jpg" alt="Mercados Flutuantes e Ferroviários" class="icon-img"/>
         <h3>Mercados Flutuantes e Ferroviários</h3>
         <p>Testemunhe a singularidade do Mercado Ferroviário de Maeklong e a efervescência do Mercado Flutuante de Damnoen Saduak.</p>
       </div>
 
       <div class="experience-card">
-        <span class="icon">🐘</span>
+        <img src="ELEFANTES.jpg" alt="Interação Ética com Elefantes" class="icon-img"/>
         <h3>Interação Ética com Elefantes em Chiang Mai</h3>
         <p>Conecte-se com a natureza e os majestosos elefantes em um santuário, aprendendo sobre sua conservação e bem-estar.</p>
       </div>
 
       <div class="experience-card">
-        <span class="icon">🏯</span>
+        <img src="TEMPLOS.jpg" alt="Templos Coloridos de Chiang Rai" class="icon-img"/>
         <h3>Descoberta dos Templos Coloridos de Chiang Rai</h3>
         <p>Visite as obras de arte arquitetônicas do Templo Branco, Templo Azul e Templo Vermelho, verdadeiros tesouros da Tailândia.</p>
       </div>
 
       <div class="experience-card">
-        <span class="icon">🧑‍🤝‍🧑</span>
+        <img src="MULHERES.jpg" alt="Mulheres-Girafa (Karen Long Neck Tribe)" class="icon-img"/>
         <h3>Encontro com as Mulheres-Girafa (Karen Long Neck Tribe)</h3>
         <p>Uma imersão cultural única, conhecendo a tradição e o modo de vida da comunidade Karen.</p>
       </div>
 
       <div class="experience-card">
-        <span class="icon">🏝️</span>
+        <img src="BAIA.jpg" alt="Paraísos de Phi Phi: Baía Maya e Snorkel" class="icon-img"/>
         <h3>Paraísos de Phi Phi: Baía Maya e Snorkel</h3>
         <p>Explore as águas cristalinas da Baía Maya e outras ilhas de Phi Phi, com paradas para snorkel em cenários paradisíacos.</p>
       </div>
 
       <div class="experience-card">
-        <span class="icon">🚤</span>
+        <img src="CAIAQUE.jpg" alt="Passeio de Barco Longtail e Caiaque em Phi Phi" class="icon-img"/>
         <h3>Passeio de Barco Longtail e Caiaque em Phi Phi</h3>
         <p>Navegue em um barco longtail tradicional e aventure-se de caiaque por enseadas secretas de Phi Phi.</p>
       </div>
 
       <div class="experience-card">
-        <span class="icon">🎬</span>
+        <img src="JAMES.jpg" alt="A Famosa Ilha James Bond e Cavernas de Phang Nga" class="icon-img"/>
         <h3>A Famosa Ilha James Bond e Cavernas de Phang Nga</h3>
         <p>Visite o icônico cenário de cinema e explore as impressionantes formações rochosas e cavernas da Baía de Phang Nga.</p>
       </div>
 
       <div class="experience-card">
-        <span class="icon">🛍️</span>
+        <img src="PHUKET.jpg" alt="Dia Livre para Explorar Phuket e suas Praias" class="icon-img"/>
         <h3>Dia Livre para Explorar Phuket e suas Praias</h3>
         <p>Relaxe nas praias de Phuket, descubra a Cidade Velha ou faça compras, com a liberdade de seu próprio ritmo.</p>
       </div>
@@ -1211,17 +1233,17 @@
       <a class="cta-btn whatsapp"
          href="https://wa.me/553598862-2943?text=Ol%C3%A1%21+Tenho+interesse+no+pacote+Tail%C3%A2ndia+M%C3%A1gica+com+sa%C3%ADda+em+08%2F03%2F2027+%F0%9F%87%B9%F0%9F%87%AD"
          target="_blank">
-        💬 WhatsApp (35) 98862-2943
+        💬WhatsApp(35)98862-2943
       </a>
       <a class="cta-btn email"
          href="mailto:oficinadeturismo@oficinatur.com.br?subject=Interesse%20Tail%C3%A2ndia%20M%C3%A1gica%2008%20Mar%C3%A7o%202027"
          target="_blank">
-        📧 Enviar E-mail
+        📧Enviar E-mail
       </a>
       <a class="cta-btn insta"
          href="https://instagram.com/oficinadeturismo"
          target="_blank">
-        📸 @oficinadeturismo
+        📸@oficinadeturismo
       </a>
     </div>
   </section>
@@ -1230,11 +1252,11 @@
   <footer>
     <img src="Logo fundo transparente.png" alt="Oficina de Turismo"/>
     <p>
-      📱 <a href="tel:+5535988622943">(35) 98862-2943</a>
+      📱<a href="tel:+5535988622943">(35) 98862-2943</a>
       &nbsp;·&nbsp;
-      📧 <a href="mailto:oficinadeturismo@oficinatur.com.br">oficinadeturismo@oficinatur.com.br</a>
+      📧<a href="mailto:oficinadeturismo@oficinatur.com.br">oficinadeturismo@oficinatur.com.br</a>
       &nbsp;·&nbsp;
-      📸 <a href="https://instagram.com/oficinadeturismo" target="_blank">@oficinadeturismo</a>
+      📸<a href="https://instagram.com/oficinadeturismo" target="_blank">@oficinadeturismo</a>
     </p>
     <p style="margin-top: 12px;">© 2027 Oficina de Turismo · Todos os direitos reservados.</p>
     <p style="margin-top: 6px; color: #555;">Informações, voos e hotéis sujeitos a alteração sem aviso prévio.</p>
